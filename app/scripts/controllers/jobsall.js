@@ -8,10 +8,14 @@
  * Controller of the jobSeekerApp
  */
 angular.module('jobSeekerApp')
-  .controller('JobsallCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('JobsallCtrl', ['getAllJobs', function (jobsService) {
+    var pageNumber = 1;
+  	var ctrl = this;
+  	jobsService.getJobs(pageNumber)
+  		.then(function(response) {
+  			ctrl.jobsNumber = response.data.count;
+  			ctrl.jobsList = response.data.results;
+  		}, function(error) {
+  			console.log("fuck u " + error);
+  		});
+  }]);

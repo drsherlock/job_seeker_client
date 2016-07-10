@@ -1,1 +1,11 @@
-<p>This is the companiesAll view.</p>
+<h3>Number of Companies: {{companies.companiesNumber}}<h3>
+
+<ul>
+	<li ng-repeat="company in companies.companiesList">
+		<h2>Company Name: {{company.company_name}}</h2>
+		<p>Location: {{company.location}}</p>
+		<p>Founded In: {{company.founded_year}}</p>
+		<p>Opening: {{company.opening}}</p>
+		<p>Number Of Openings: {{company.no_openings}}</p>
+	</li>
+</ul>
