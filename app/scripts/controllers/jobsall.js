@@ -9,9 +9,18 @@
  */
 angular.module('jobSeekerApp')
   .controller('JobsallCtrl', ['getAllJobs', function (jobsService) {
-    var pageNumber = 1;
   	var ctrl = this;
-  	jobsService.getJobs(pageNumber)
+  	ctrl.pageNumber = 1;
+  	ctrl.getNext = function() {
+  		ctrl.pageNumber = ctrl.pageNumber + 1;
+  		jobsService.getJobs(ctrl.pageNumber)
+  		.then(function(response){
+  			ctrl.jobsList = ctrl.jobsList.concat(response.data.results);	
+  		}, function(error) {
+  			console.log("fuck u "+ error);
+  		});
+  	};
+  	jobsService.getJobs(ctrl.pageNumber)
   		.then(function(response) {
   			ctrl.jobsNumber = response.data.count;
   			ctrl.jobsList = response.data.results;

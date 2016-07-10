@@ -9,9 +9,18 @@
  */
 angular.module('jobSeekerApp')
   .controller('CompaniesallCtrl', ['getAllCompanies', function (companiesService) {
-  	var pageNumber = 1;
   	var ctrl = this;
-  	companiesService.getCompanies(pageNumber)
+  	ctrl.pageNumber = 1;
+  	ctrl.getNext = function() {
+  		ctrl.pageNumber = ctrl.pageNumber + 1;
+  		companiesService.getCompanies(ctrl.pageNumber)
+  		.then(function(response){
+  			ctrl.companiesList	= ctrl.companiesList.concat(response.data.results);	
+  		}, function(error) {
+  			console.log("fuck u "+ error);
+  		});
+  	};
+  	companiesService.getCompanies(ctrl.pageNumber)
   		.then(function(response){
   			ctrl.companiesNumber = response.data.count;
   			ctrl.companiesList = response.data.results;
