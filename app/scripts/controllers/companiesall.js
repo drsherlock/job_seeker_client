@@ -22,7 +22,7 @@ angular.module('jobSeekerApp')
   	};
   	companiesService.getCompanies(ctrl.pageNumber)
   		.then(function(response){
-  			ctrl.companiesNumber = response.data.count;
+  			ctrl.companiesCount = response.data.count;
   			ctrl.companiesList = response.data.results;
   		}, function(error) {
   			console.log("fuck u "+ error);

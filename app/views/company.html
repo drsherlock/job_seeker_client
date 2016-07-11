@@ -1,0 +1,12 @@
+<h3>{{company.companyName}}</h3>
+<p>{{company.location}}</p>
+<p>Founded in {{company.foundedYear}}</p>
+<p>Number of openings are {{company.numberOpenings}}</p>
+<div ng-if="company.opening">
+	<ul ng-repeat="job in company.jobList">
+		<li>{{job}}</li>
+	</ul>
+</div>
+<div ng-if="!company.opening">
+	<p>No current openings!</p>
+</div>

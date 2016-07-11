@@ -34,8 +34,14 @@ angular
         controller: 'JobsallCtrl',
         controllerAs: 'jobs'
       })
+      .when('/companies/:id', {
+        templateUrl: 'views/company.html',
+        controller: 'CompanyCtrl',
+        controllerAs: 'company'
+      })
       .otherwise({
         redirectTo: '/'
       });
       $locationProvider.html5Mode(true);
+      $locationProvider.hashPrefix = '!';
   });

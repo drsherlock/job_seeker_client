@@ -1,8 +1,8 @@
-<h3>Number of Companies: {{companies.companiesNumber}}<h3>
+<h3>Number of Companies: {{companies.companiesCount}}<h3>
 
 <ul>
 	<li ng-repeat="company in companies.companiesList">
-		<h2>Company Name: {{company.company_name}}</h2>
+		<h2><a ng-href="/companies/{{company.id}}">Company Name: {{company.company_name}}</a></h2>
 		<p>Location: {{company.location}}</p>
 		<p>Founded In: {{company.founded_year}}</p>
 		<p>Opening: {{company.opening}}</p>
