@@ -22,7 +22,6 @@ angular.module('jobSeekerApp')
   	};
   	jobsService.getJobs(ctrl.pageNumber)
   		.then(function(response) {
-  			ctrl.jobsCount = response.data.count;
   			ctrl.jobsList = response.data.results;
   		}, function(error) {
   			console.log("fuck u " + error);

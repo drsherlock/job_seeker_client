@@ -1,13 +1,11 @@
-<h3>Number of Companies: {{companies.companiesCount}}<h3>
 
-<ul>
-	<li ng-repeat="company in companies.companiesList">
-		<h2><a ng-href="/companies/{{company.id}}">Company Name: {{company.company_name}}</a></h2>
-		<p>Location: {{company.location}}</p>
-		<p>Founded In: {{company.founded_year}}</p>
-		<p>Opening: {{company.opening}}</p>
-		<p>Number Of Openings: {{company.no_openings}}</p>
-	</li>
-</ul>
+<div class="jumbotron companies" ng-repeat="company in companies.companiesList">
+	<h2><a ng-href="/companies/{{company.id}}">Company Name: {{company.company_name}}</a></h2>
+	<p>Location: {{company.location}}</p>
+	<p>Founded In: {{company.founded_year}}</p>
+	<p ng-if="company.opening">Opening: Yes</p>
+	<p ng-if="!company.opening">Opening: No</p>
+	<p>Number Of Openings: {{company.no_openings}}</p>
+</div>
 
-<button ng-click="companies.getNext()">Load More</button>
+<button ng-click="companies.getNext()">See More</button>
