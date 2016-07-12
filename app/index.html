@@ -13,11 +13,13 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
     <link href="https://fonts.googleapis.com/css?family=Bungee|Carrois+Gothic+SC|Oswald" rel="stylesheet">
     <base href="/">
     <!-- endbuild -->
   </head>
   <body ng-app="jobSeekerApp" class="carrois-font">
+    <div id="wrapper">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -51,7 +53,7 @@
 
     <div class="footer bungee-font text-center">
       <div class="container">
-        <p>CREATED WITH <span class="glyphicon glyphicon-heart"></span> by ZAIN UL HAQ</p>
+        <p id="footer-text">CREATED WITH <span class="glyphicon glyphicon-heart"></span> by ZAIN UL HAQ</p>
       </div>
     </div>
 
@@ -87,5 +89,6 @@
         <script src="scripts/controllers/company.js"></script>
         <script src="scripts/services/getcompany.js"></script>
         <!-- endbuild -->
+      </div>
 </body>
 </html>

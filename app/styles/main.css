@@ -1,10 +1,34 @@
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
 body {
 	 background-color: #444444;
 	 color: #eeeeee;
 }
 
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+
 .text-center {
 	text-align: center;
+}
+
+.carrois-font {
+	font-family: 'Carrois Gothic SC';
+}
+
+.bungee-font {
+	font-family: 'Bungee';
+}
+
+.oswald-font {
+	font-family: 'Oswald';
 }
 
 .jumbotron {
@@ -12,8 +36,25 @@ body {
 	border-radius: 0 !important;
 }
 
+.jumbotron h1 {
+	font-size: 6em;
+}
+
 .navbar {
 	background-color: #eeeeee;
+	border-radius: 0 !important;
+}
+
+.nav li a {
+	color: #444444 !important;
+}
+
+.nav li a:hover {
+	color: #337695 !important;
+}
+
+.navbar-brand {
+	color: #337695 !important;
 }
 
 .panel {
@@ -46,11 +87,18 @@ body {
 	font-size: 1.5em;
 }
 
+.panel-heading {
+	background-color: #eeeeee !important;
+}
+
 .panel-heading h3 {
 	font-size: 2.5em;
-	color: #337695;
-	box-shadow: 5px 10px 10px #444444;
+	background-color: #337695;
+	color: #444444;
+	box-shadow: 10px 10px 10px #444444;
 	transition: box-shadow 0.5s;
+	border-color: #337695;
+	border-radius: 0 !important;
 }
 
 .panel-heading h3:hover {
@@ -59,20 +107,9 @@ body {
 	box-shadow: none;
 }
 
-.well {
-	border-radius: 0 !important;
-}
-
-.carrois-font {
-	font-family: 'Carrois Gothic SC';
-}
-
-.bungee-font {
-	font-family: 'Bungee';
-}
-
-.oswald-font {
-	font-family: 'Oswald';
+.top-panel {
+	font-size: 2em;
+	border-color: #337695;
 }
 
 /*a:link {
@@ -91,6 +128,23 @@ a:hover {
     text-decoration: none;
 }
 */
+
+.footer {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background-color: #eeeeee;
+	color: #337695;
+}
+
+#footer-text {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.counters {
+	font-size: 2.5em;
+}
 
 .hvr-sink {
   display: inline-block;
