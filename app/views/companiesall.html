@@ -1,11 +1,13 @@
 
-<div class="jumbotron companies" ng-repeat="company in companies.companiesList">
-	<h2><a ng-href="/companies/{{company.id}}">Company Name: {{company.company_name}}</a></h2>
-	<p>Location: {{company.location}}</p>
-	<p>Founded In: {{company.founded_year}}</p>
-	<p ng-if="company.opening">Opening: Yes</p>
-	<p ng-if="!company.opening">Opening: No</p>
-	<p>Number Of Openings: {{company.no_openings}}</p>
+<div class="panel panel-default companies" ng-repeat="company in companies.companiesList">
+	<div class="panel-heading text-center"><a ng-href="/companies/{{company.id}}" class="hvr-sink"><h3 class="well">{{company.company_name}}</h3></a></div>
+	<div class="panel-body text-center flexcontainer">
+		<div>Location: {{company.location}}</div>
+		<div>Founded In: {{company.founded_year}}</div>
+		<div ng-if="company.opening">Opening: Yes</div>
+		<div ng-if="!company.opening">Opening: No</div>
+		<div>Number Of Openings: {{company.no_openings}}</div>
+	</div>
 </div>
 
 <button ng-click="companies.getNext()">See More</button>

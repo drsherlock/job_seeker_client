@@ -1,7 +1,9 @@
 
-<div class="jumbotron jobs" ng-repeat="job in jobs.jobsList">
-	<h2><a href="{{job.career_url}}" target='_blank'>Job Name: {{job.job_name}}</a></h2>
-	<p>Company Name: {{job.company_name}}</p>
+<div class="panel panel-default jobs" ng-repeat="job in jobs.jobsList">
+	<div class="panel-heading text-center"><a href="{{job.career_url}}" target='_blank' class="hvr-sink"><h3 class="well">{{job.job_name}}</h3></a></div>
+	<div class="panel-body text-center flexcontainer">
+		<div>Company: {{job.company_name}}</div>
+	</div>
 </div>
 
 <button ng-click="jobs.getNext()">See More</button>
