@@ -1,12 +1,24 @@
-<h3>{{company.companyName}}</h3>
-<p>{{company.location}}</p>
-<p>Founded in {{company.foundedYear}}</p>
-<p>Number of openings are {{company.numberOpenings}}</p>
-<div ng-if="company.opening">
-	<ul ng-repeat="job in company.jobList">
-		<li>{{job}}</li>
-	</ul>
+
+<div class="panel panel-default">
+	<div class="panel-heading text-center"><a href="{{company.companyUrl}}" target='_blank' class="hvr-sink"><h3 class="well">{{company.companyName}}</h3></a></div>
+	<div class="panel-body text-center flexcontainer">
+		<div>Location: {{company.location}}</div>
+		<div>Founded In: {{company.foundedYear}}</div>
+		<div ng-if="company.opening">Opening: Yes</div>
+		<div ng-if="!company.opening">Opening: No</div>
+		<div>Number Of Openings: {{company.numberOpenings}}</div>
+	</div>
 </div>
+
+<div ng-if="company.opening">
+	<div class="panel panel-default" ng-repeat="job in company.jobList">
+	  <div class="text-center job"><a href="{{company.careerUrl}}" target='_blank' class="hvr-sink">{{job}}</a></div>
+	</div>
+</div>
+
+
 <div ng-if="!company.opening">
-	<p>No current openings!</p>
+	<div class="panel panel-default">
+	  <div class="text-center job">No current openings!</div>
+	</div>
 </div>
