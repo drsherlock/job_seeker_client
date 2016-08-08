@@ -8,10 +8,9 @@
  * Service in the jobSeekerApp.
  */
 angular.module('jobSeekerApp')
-  .service('getCompany', ['$http', function ($http) {
-    // AngularJS will instantiate a singleton by calling "new" on this function
-    var url = "http://localhost:8000/companies/";
+  .service('getCompany', ['$http', function ($http) {    
     this.getCompany = function(p) {
-    	return $http.get(url+p);
+    	var url = "https://job-seeker-india.herokuapp.com/companies/"+p+"/api";
+    	return $http.get(url);
     };
   }]);

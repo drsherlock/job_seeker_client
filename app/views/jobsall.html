@@ -10,4 +10,70 @@
 	</div>
 </div>
 
+<span class="searchButton"><i class="fa fa-search fa-2x"></i></span><input ng-change="jobs.search()" ng-model="jobs.searchTerm" type="text" id="search-box" style="width: 0px; visibility:hidden;"/>
+
+<a href="#" id="back-to-top" title="Back to top"><i class="fa fa-arrow-up fa-2x"></i></a>
+
 <div ng-click="jobs.getNext()" class="nextButton">See More</div>
+
+<script type="text/javascript">	
+  	if ($('#back-to-top').length) {
+      	var scrollTrigger = 100, // px
+        backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+                $('#back-to-top').addClass('show');
+            } else {
+                $('#back-to-top').removeClass('show');
+            }
+        };
+      	backToTop();
+      	$(window).on('scroll', function () {
+          	backToTop();
+      	});
+      	$('#back-to-top').on('click', function (e) {
+          	e.preventDefault();
+          	$('html,body').animate({
+              	scrollTop: 0
+          	}, 1000);
+      	});
+  	}
+
+  	var toggleVar = true;
+  	$('.searchButton').on('click', function() {
+  		if(toggleVar) {
+  			$('.searchButton').animate({right: '210px'}, '1200');
+  			$('#search-box').css("visibility", "visible");
+  			setTimeout(function() {
+		  		$('.searchButton').css("color", "#444444");
+		  	}, 100);
+	  		$('#search-box').animate({ width: 185 }, '1200').focus();
+	  		toggleVar = false;
+  		}
+  		else {
+  			$('#search-box').animate({ width: 0 }, '1200');
+	  		$('.searchButton').animate({right: '25px'}, '1200');
+	  		// setTimeout(function() {
+	  		// 	$('#search-box').css("visibility", "hidden");
+	  		// }, 350);
+	  		setTimeout(function() {
+		  		$('.searchButton').css("color", "#eeeeee");
+		  	}, 200);
+	  		toggleVar = true;
+  		}
+  	});
+
+  	$('#search-box').focusout(function() {
+  		if(!toggleVar) {
+  			$('#search-box').animate({ width: 0 }, '1200');
+		  	$('.searchButton').animate({right: '25px'}, '1200');
+		  	// setTimeout(function() {
+		  	// 	$('#search-box').css("visibility", "hidden");
+		  	// }, 350);
+		  	setTimeout(function() {
+		  		$('.searchButton').css("color", "#eeeeee");
+		  	}, 200);
+		  	toggleVar = true;
+  		}
+  	});
+</script>
