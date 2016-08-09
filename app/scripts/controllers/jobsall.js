@@ -48,7 +48,6 @@ angular.module('jobSeekerApp')
 
     ctrl.deleteTerm = function (event) {
       if (event.keyCode === 8) {
-        console.log("Yesss");
         ctrl.searchTermLen = ctrl.searchTermLen - 1;
       }
     };
@@ -67,6 +66,7 @@ angular.module('jobSeekerApp')
           });
       }
       else {
+        ctrl.searchPageNumber = 1;
         jobsSearchService.searchJob(ctrl.searchPageNumber, ctrl.searchTerm)
           .then(function(response) {
             ctrl.jobsList = response.data.results;

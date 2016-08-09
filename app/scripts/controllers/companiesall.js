@@ -13,19 +13,32 @@ angular.module('jobSeekerApp')
     var count;
     ctrl.pageNumber = 1;
     ctrl.searchPageNumber = 1;
+
   	ctrl.getNext = function() {
-  		ctrl.pageNumber = ctrl.pageNumber + 1;
-  		companiesService.getCompanies(ctrl.pageNumber)
-  		.then(function(response){
-  			ctrl.companiesList	= ctrl.companiesList.concat(response.data.results);	
-        checkCount();
-  		}, function(error) {
-  			console.log("fuck u "+ error);
-  		});
-  	};
+      if(ctrl.searchTerm === "" && ctrl.searchTermLen === 0) {
+        ctrl.pageNumber = ctrl.pageNumber + 1;
+        companiesService.getCompanies(ctrl.pageNumber)
+          .then(function(response) {
+            ctrl.companiesList = ctrl.companiesList.concat(response.data.results);
+            checkCount(); 
+          }, function(error) {
+            console.log("fuck u " + error);
+          });
+      }
+      else {
+        ctrl.searchPageNumber = ctrl.searchPageNumber + 1;
+        companiesSearchService.searchCompany(ctrl.searchPageNumber, ctrl.searchTerm)
+          .then(function(response) {
+            ctrl.companiesList = ctrl.companiesList.concat(response.data.results);
+            checkCount();
+          }, function(error) {
+            console.log("fuck u " + error);
+          });
+      } 
+    };
 
   	companiesService.getCompanies(ctrl.pageNumber)
-  		.then(function(response){
+  		.then(function(response) {
   			ctrl.companiesList = response.data.results;
         count = response.data.count;
         checkCount();
@@ -33,11 +46,18 @@ angular.module('jobSeekerApp')
   			console.log("fuck u "+ error);
   		});
 
+    ctrl.deleteTerm = function (event) {
+      if (event.keyCode === 8) {
+        ctrl.searchTermLen = ctrl.searchTermLen - 1;
+      }
+    };
+
     ctrl.search = function() {
-      ctrl.pageNumber = 1;
-      if(ctrl.searchTerm === "") {
+      ctrl.searchTermLen = ctrl.searchTerm.length;
+      if(ctrl.searchTerm === "" && ctrl.searchTermLen === 0) {
+        ctrl.pageNumber = 1;
         companiesService.getCompanies(ctrl.pageNumber)
-          .then(function(response){
+          .then(function(response) {
             ctrl.companiesList = response.data.results;
             count = response.data.count;
             checkCount();
@@ -46,10 +66,10 @@ angular.module('jobSeekerApp')
           });
       }
       else {
+        ctrl.searchPageNumber = 1;
         companiesSearchService.searchCompany(ctrl.searchPageNumber, ctrl.searchTerm)
-          .then(function(response){
+          .then(function(response) {
             ctrl.companiesList = response.data.results;
-            console.log(response.data.results);
             count = response.data.count;
             checkCount();
           }, function(error) {

@@ -14,7 +14,7 @@
 	</div>
 </div>
 
-<span class="searchButton"><i class="fa fa-search fa-2x"></i></span><input ng-change="companies.search()" ng-model="companies.searchTerm" type="text" id="search-box" style="width: 0px; visibility:hidden;"/>
+<span class="searchButton"><i class="fa fa-search fa-2x"></i></span><input ng-change="companies.search()" ng-model="companies.searchTerm" ng-keydown="companies.deleteTerm($event)" type="text" id="search-box" style="width: 0px; visibility:hidden;"/>
 
 <a href="#" id="back-to-top" title="Back to top"><i class="fa fa-arrow-up fa-2x"></i></a>
 
