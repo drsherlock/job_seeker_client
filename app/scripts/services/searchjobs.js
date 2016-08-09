@@ -10,7 +10,7 @@
 angular.module('jobSeekerApp')
   .service('searchJobs', ['$http', function ($http) {
     this.searchJob = function(p, q) {
-    	var url = "http://localhost:8000/jobs/search/"+q+"/api/?page="+p;
+    	var url = "https://job-seeker-india.herokuapp.com/jobs/search/"+q+"/api/?page="+p;
     	return $http.get(url);
     };
   }]);
