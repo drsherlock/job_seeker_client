@@ -13,9 +13,11 @@ angular.module('jobSeekerApp')
     var count;
     ctrl.pageNumber = 1;
     ctrl.searchPageNumber = 1;
+    ctrl.isSearching = false;
+    ctrl.searchTerm = "";
 
   	ctrl.getNext = function() {
-      if(ctrl.searchTerm === "" && ctrl.searchTermLen === 0) {
+      if(ctrl.searchTerm === "" && ctrl.isSearching === false) {
         ctrl.pageNumber = ctrl.pageNumber + 1;
         jobsService.getJobs(ctrl.pageNumber)
           .then(function(response) {
@@ -50,11 +52,14 @@ angular.module('jobSeekerApp')
       if (event.keyCode === 8) {
         ctrl.searchTermLen = ctrl.searchTermLen - 1;
       }
+      if(ctrl.searchTermLen === 0) {
+        ctrl.isSearching = false;
+      }
     };
 
     ctrl.search = function() {
       ctrl.searchTermLen = ctrl.searchTerm.length;
-      if(ctrl.searchTerm === "" && ctrl.searchTermLen === 0) {
+      if(ctrl.searchTerm === "" && ctrl.isSearching === false) {
         ctrl.pageNumber = 1;
         jobsService.getJobs(ctrl.pageNumber)
           .then(function(response) {
@@ -66,6 +71,7 @@ angular.module('jobSeekerApp')
           });
       }
       else {
+        ctrl.isSearching = true;
         ctrl.searchPageNumber = 1;
         jobsSearchService.searchJob(ctrl.searchPageNumber, ctrl.searchTerm)
           .then(function(response) {
