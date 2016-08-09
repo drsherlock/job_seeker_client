@@ -13,15 +13,28 @@ angular.module('jobSeekerApp')
     var count;
     ctrl.pageNumber = 1;
     ctrl.searchPageNumber = 1;
+
   	ctrl.getNext = function() {
-  		ctrl.pageNumber = ctrl.pageNumber + 1;
-  		jobsService.getJobs(ctrl.pageNumber)
-  		.then(function(response){
-  			ctrl.jobsList = ctrl.jobsList.concat(response.data.results);
-        checkCount();	
-  		}, function(error) {
-  			console.log("fuck u "+ error);
-  		});
+      if(ctrl.searchTerm === "" && ctrl.searchTermLen === 0) {
+        ctrl.pageNumber = ctrl.pageNumber + 1;
+        jobsService.getJobs(ctrl.pageNumber)
+          .then(function(response) {
+            ctrl.jobsList = ctrl.jobsList.concat(response.data.results);
+            checkCount(); 
+          }, function(error) {
+            console.log("fuck u " + error);
+          });
+      }
+      else {
+        ctrl.searchPageNumber = ctrl.searchPageNumber + 1;
+        jobsSearchService.searchJob(ctrl.searchPageNumber, ctrl.searchTerm)
+          .then(function(response) {
+            ctrl.jobsList = ctrl.jobsList.concat(response.data.results);
+            checkCount();
+          }, function(error) {
+            console.log("fuck u " + error);
+          });
+      }	
   	};
 
   	jobsService.getJobs(ctrl.pageNumber)
@@ -33,23 +46,30 @@ angular.module('jobSeekerApp')
   			console.log("fuck u " + error);
   		});
 
+    ctrl.deleteTerm = function (event) {
+      if (event.keyCode === 8) {
+        console.log("Yesss");
+        ctrl.searchTermLen = ctrl.searchTermLen - 1;
+      }
+    };
+
     ctrl.search = function() {
-      if(ctrl.searchTerm === "") {
+      ctrl.searchTermLen = ctrl.searchTerm.length;
+      if(ctrl.searchTerm === "" && ctrl.searchTermLen === 0) {
         ctrl.pageNumber = 1;
         jobsService.getJobs(ctrl.pageNumber)
-          .then(function(response){
+          .then(function(response) {
             ctrl.jobsList = response.data.results;
             count = response.data.count;
             checkCount();
           }, function(error) {
-            console.log("fuck u "+ error);
+            console.log("fuck u " + error);
           });
       }
       else {
         jobsSearchService.searchJob(ctrl.searchPageNumber, ctrl.searchTerm)
-          .then(function(response){
+          .then(function(response) {
             ctrl.jobsList = response.data.results;
-            console.log(response.data.results);
             count = response.data.count;
             checkCount();
           }, function(error) {
