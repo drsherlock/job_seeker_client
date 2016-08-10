@@ -3,6 +3,7 @@
   <div class="panel-body">Jobs</div>
 </div>
 
+<!-- Show results -->
 <div class="panel panel-default jobs" ng-repeat="job in jobs.jobsList">
 	<div class="panel-heading text-center"><a href="{{job.career_url}}" target='_blank' class="hvr-sink"><h3 class="well">{{job.job_name}}</h3></a></div>
 	<div class="panel-body text-center flexcontainer">
@@ -10,10 +11,13 @@
 	</div>
 </div>
 
+<!-- Search buton and search box -->
 <span class="searchButton"><i class="fa fa-search fa-2x"></i></span><input ng-change="jobs.search()" ng-model="jobs.searchTerm" ng-keydown="jobs.deleteTerm($event)" type="text" id="search-box" style="width: 0px; visibility:hidden;"/>
 
+<!-- Take to top of page button -->
 <a href="#" id="back-to-top" title="Back to top"><i class="fa fa-arrow-up fa-2x"></i></a>
 
+<!-- Get next ten results -->
 <div ng-click="jobs.getNext()" class="nextButton">See More</div>
 
 <script type="text/javascript">	
@@ -53,9 +57,6 @@
   		else {
   			$('#search-box').animate({ width: 0 }, '1200');
 	  		$('.searchButton').animate({right: '25px'}, '1200');
-	  		// setTimeout(function() {
-	  		// 	$('#search-box').css("visibility", "hidden");
-	  		// }, 350);
 	  		setTimeout(function() {
 		  		$('.searchButton').css("color", "#eeeeee");
 		  	}, 200);
@@ -67,9 +68,6 @@
   		if(!toggleVar) {
   			$('#search-box').animate({ width: 0 }, '1200');
 		  	$('.searchButton').animate({right: '25px'}, '1200');
-		  	// setTimeout(function() {
-		  	// 	$('#search-box').css("visibility", "hidden");
-		  	// }, 350);
 		  	setTimeout(function() {
 		  		$('.searchButton').css("color", "#eeeeee");
 		  	}, 200);
