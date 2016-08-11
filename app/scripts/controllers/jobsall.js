@@ -8,7 +8,7 @@
  * Controller of the jobSeekerApp
  */
 angular.module('jobSeekerApp')
-  .controller('JobsallCtrl', ['getAllJobs', 'searchJobs', function (jobsService, jobsSearchService) {
+  .controller('JobsallCtrl', ['getAllJobs', function (jobsService) {
   	var ctrl = this;
     var count;
     ctrl.pageNumber = 1;
@@ -23,7 +23,7 @@ angular.module('jobSeekerApp')
         count = response.data.count;
         checkCount();
       }, function(error) {
-        console.log("fuck u " + error);
+        console.log(error);
       });
 
     // User clicks next button
@@ -36,18 +36,18 @@ angular.module('jobSeekerApp')
             ctrl.jobsList = ctrl.jobsList.concat(response.data.results);
             checkCount(); 
           }, function(error) {
-            console.log("fuck u " + error);
+            console.log(error);
           });
       }
       // If search is being used
       else {
         ctrl.searchPageNumber = ctrl.searchPageNumber + 1;
-        jobsSearchService.searchJob(ctrl.searchPageNumber, ctrl.searchTerm)
+        jobsService.searchJob(ctrl.searchPageNumber, ctrl.searchTerm)
           .then(function(response) {
             ctrl.jobsList = ctrl.jobsList.concat(response.data.results);
             checkCount();
           }, function(error) {
-            console.log("fuck u " + error);
+            console.log(error);
           });
       }	
   	};
@@ -58,9 +58,7 @@ angular.module('jobSeekerApp')
         ctrl.searchTermLen = ctrl.searchTermLen - 1;
       }
       // If search box is empty
-      if(ctrl.searchTermLen === 0) {
-        ctrl.isSearching = false;
-      }
+      ctrl.isSearching = ctrl.searchTermLen !== 0;
     };
 
     // User clicks search button
@@ -75,20 +73,20 @@ angular.module('jobSeekerApp')
             count = response.data.count;
             checkCount();
           }, function(error) {
-            console.log("fuck u " + error);
+            console.log(error);
           });
       }
       // If search box is not empty, search the input
       else {
         ctrl.isSearching = true;
         ctrl.searchPageNumber = 1;
-        jobsSearchService.searchJob(ctrl.searchPageNumber, ctrl.searchTerm)
+        jobsService.searchJob(ctrl.searchPageNumber, ctrl.searchTerm)
           .then(function(response) {
             ctrl.jobsList = response.data.results;
             count = response.data.count;
             checkCount();
           }, function(error) {
-            console.log("fuck u " + error);
+            console.log(error);
           });
       }
     };
@@ -96,12 +94,7 @@ angular.module('jobSeekerApp')
     // Function to hide and show next button
     function checkCount() {
       console.log(count);
-      if(count < 10) {
-        $(".nextButton").hide();
-      }
-      else {
-        $(".nextButton").show();
-      }
+      $(".nextButton").toggle(count > 10);
       count = count - 10;
     }
   }]);

@@ -13,4 +13,9 @@ angular.module('jobSeekerApp')
     	var url = "https://job-seeker-india.herokuapp.com/companies/api/?page="+p;
     	return $http.get(url);
     };
+    
+    this.searchCompany = function(p, q) {
+    	var url = "https://job-seeker-india.herokuapp.com/companies/search/"+q+"/api/?page="+p;
+    	return $http.get(url);
+    };
   }]);
