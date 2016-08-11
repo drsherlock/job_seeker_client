@@ -256,6 +256,17 @@ a:hover {
     border: 0;
 }
 
+#share {
+	width: 50px;
+	position: fixed;
+	top: 200px;
+	right: 10px;
+}
+
+.jssocials-share-email {
+	padding-left: 4px;
+}
+
 .hvr-sink {
   display: inline-block;
   vertical-align: middle;

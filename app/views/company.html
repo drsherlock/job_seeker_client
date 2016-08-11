@@ -22,3 +22,16 @@
 	  <div class="text-center job">No current openings!</div>
 	</div>
 </div>
+
+<div id="share"></div>
+
+<script>
+		var companyName = $('h3').html();
+    $("#share").jsSocials({
+      showLabel: false,
+    	showCount: false,
+    	shareIn: "popup",
+    	text: "Check out these awesome openings!",
+      shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "whatsapp"]
+    });
+</script>
