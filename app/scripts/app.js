@@ -48,5 +48,5 @@ angular
         redirectTo: '/'
       });
       $locationProvider.html5Mode(true);
-      $locationProvider.hashPrefix = '!';
+      // $locationProvider.hashPrefix = '!';
   });

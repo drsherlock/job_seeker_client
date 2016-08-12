@@ -22,6 +22,6 @@ angular.module('jobSeekerApp')
   			ctrl.careerUrl = response.data.career_url;
   			ctrl.jobList = response.data.jobs;
   		}, function(error) {
-  			console.log("fuck u " + error);
+  			console.log(error);
   		});
   }]);
