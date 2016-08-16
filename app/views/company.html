@@ -23,6 +23,8 @@
 	</div>
 </div>
 
+<span class="searchButton"><i class="fa fa-search fa-2x"></i></span><input ng-change="company.search()" ng-model="company.searchTerm" ng-keydown="company.deleteTerm($event)" type="text" id="search-box" style="width: 0px; visibility:hidden;"/>
+
 <div id="share"></div>
 
 <a href="#" id="back-to-top" title="Back to top"><i class="fa fa-arrow-up fa-2x"></i></a>
@@ -56,5 +58,37 @@
     	shareIn: "popup",
     	text: "Check out these awesome openings!",
       shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "whatsapp"]
+    });
+
+    var toggleVar = true;
+    $('.searchButton').on('click', function() {
+      if(toggleVar) {
+        $('.searchButton').animate({right: '210px'}, 400);
+        $('#search-box').css("visibility", "visible");
+        setTimeout(function() {
+          $('.searchButton').css("color", "#444444");
+        }, 200);
+        $('#search-box').animate({ width: 185 }, 400).focus();
+        toggleVar = false;
+      }
+      else {
+        $('#search-box').animate({ width: 0 }, 400);
+        $('.searchButton').animate({right: '25px'}, 400);
+        setTimeout(function() {
+          $('.searchButton').css("color", "#eeeeee");
+        }, 300);
+        toggleVar = true;
+      }
+    });
+
+    $('#search-box').focusout(function() {
+      if(!toggleVar) {
+        $('#search-box').animate({ width: 0 }, 400);
+        $('.searchButton').animate({right: '25px'}, 400);
+        setTimeout(function() {
+          $('.searchButton').css("color", "#eeeeee");
+        }, 300);
+        toggleVar = true;
+      }
     });
 </script>
