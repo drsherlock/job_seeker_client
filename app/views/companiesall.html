@@ -5,7 +5,11 @@
 
 <!-- Show results -->
 <div class="panel panel-default companies" ng-repeat="company in companies.companiesList">
-	<div class="panel-heading text-center"><a ng-href="/companies/{{company.id}}" class="hvr-sink"><h3 class="well">{{company.company_name}}</h3></a></div>
+	<div class="panel-heading text-center">
+    <a ng-href="/companies/{{company.id}}" class="hvr-sink">
+      <h3 class="well">{{company.company_name}}</h3>
+    </a>
+  </div>
 	<div class="panel-body text-center flexcontainer">
 		<div>Location: {{company.location}}</div>
 		<div>Founded In: {{company.founded_year}}</div>

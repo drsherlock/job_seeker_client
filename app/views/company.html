@@ -1,6 +1,10 @@
 
 <div class="panel panel-default">
-	<div class="panel-heading text-center"><a href="{{company.companyUrl}}" target='_blank' class="hvr-sink"><h3 class="well">{{company.companyName}}</h3></a></div>
+	<div class="panel-heading text-center">
+    <a href="{{company.companyUrl}}" target='_blank' class="hvr-sink">
+      <h3 class="well">{{company.companyName}}</h3>
+    </a>
+  </div>
 	<div class="panel-body text-center flexcontainer">
 		<div>Location: {{company.location}}</div>
 		<div>Founded In: {{company.foundedYear}}</div>
@@ -13,7 +17,9 @@
 <!-- Show results -->
 <div ng-if="company.opening">
 	<div class="panel panel-default" ng-repeat="job in company.jobList">
-	  <div class="text-center job"><a href="{{company.careerUrl}}" target='_blank' class="hvr-sink">{{job}}</a></div>
+	  <div class="text-center job">
+      <a href="{{company.careerUrl}}" target='_blank' class="hvr-sink">{{job}}</a>
+    </div>
 	</div>
 </div>
 
@@ -61,37 +67,5 @@
     	shareIn: "popup",
     	text: "Check out these awesome openings!",
       shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "whatsapp"]
-    });
-
-    var toggleVar = true;
-    $('.searchButton').on('click', function() {
-      if(toggleVar) {
-        $('.searchButton').animate({right: '210px'}, 400);
-        $('#search-box').css("visibility", "visible");
-        setTimeout(function() {
-          $('.searchButton').css("color", "#444444");
-        }, 200);
-        $('#search-box').animate({ width: 185 }, 400).focus();
-        toggleVar = false;
-      }
-      else {
-        $('#search-box').animate({ width: 0 }, 400);
-        $('.searchButton').animate({right: '25px'}, 400);
-        setTimeout(function() {
-          $('.searchButton').css("color", "#eeeeee");
-        }, 300);
-        toggleVar = true;
-      }
-    });
-
-    $('#search-box').focusout(function() {
-      if(!toggleVar) {
-        $('#search-box').animate({ width: 0 }, 400);
-        $('.searchButton').animate({right: '25px'}, 400);
-        setTimeout(function() {
-          $('.searchButton').css("color", "#eeeeee");
-        }, 300);
-        toggleVar = true;
-      }
     });
 </script>

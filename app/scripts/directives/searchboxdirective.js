@@ -16,8 +16,5 @@ angular.module('jobSeekerApp')
       controllerAs: 'dirCtrl',
       bindToController: true,
       templateUrl: 'templates/searchbox-template.html',
-      link: function(scope){
-      	console.log(scope);
-      }
     };
   });
