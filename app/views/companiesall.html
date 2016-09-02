@@ -3,6 +3,7 @@
   <div class="panel-body">Companies</div>
 </div>
 
+<!-- Show results -->
 <div class="panel panel-default companies" ng-repeat="company in companies.companiesList">
 	<div class="panel-heading text-center"><a ng-href="/companies/{{company.id}}" class="hvr-sink"><h3 class="well">{{company.company_name}}</h3></a></div>
 	<div class="panel-body text-center flexcontainer">
@@ -14,10 +15,13 @@
 	</div>
 </div>
 
-<span class="searchButton"><i class="fa fa-search fa-2x"></i></span><input ng-change="companies.search()" ng-model="companies.searchTerm" ng-keydown="companies.deleteTerm($event)" type="text" id="search-box" style="width: 0px; visibility:hidden;"/>
+<!-- Search buton and search box -->
+<search-box-directive obj="companies"></search-box-directive>
 
+<!-- Take to top of page button -->
 <a href="#" id="back-to-top" title="Back to top"><i class="fa fa-arrow-up fa-2x"></i></a>
 
+<!-- Get next ten results -->
 <div ng-click="companies.getNext()" class="nextButton">See More</div>
 
 <script type="text/javascript">	
@@ -42,36 +46,4 @@
           	}, 1000);
       	});
   	}
-
-  	var toggleVar = true;
-  	$('.searchButton').on('click', function() {
-  		if(toggleVar) {
-  			$('.searchButton').animate({right: '210px'}, 400);
-  			$('#search-box').css("visibility", "visible");
-  			setTimeout(function() {
-		  		$('.searchButton').css("color", "#444444");
-		  	}, 200);
-	  		$('#search-box').animate({ width: 185 }, 400).focus();
-	  		toggleVar = false;
-  		}
-  		else {
-  			$('#search-box').animate({ width: 0 }, 400);
-	  		$('.searchButton').animate({right: '25px'}, 400);
-	  		setTimeout(function() {
-		  		$('.searchButton').css("color", "#eeeeee");
-		  	}, 300);
-	  		toggleVar = true;
-  		}
-  	});
-
-  	$('#search-box').focusout(function() {
-  		if(!toggleVar) {
-  			$('#search-box').animate({ width: 0 }, 400);
-		  	$('.searchButton').animate({right: '25px'}, 400);
-		  	setTimeout(function() {
-		  		$('.searchButton').css("color", "#eeeeee");
-		  	}, 300);
-		  	toggleVar = true;
-  		}
-  	});
 </script>

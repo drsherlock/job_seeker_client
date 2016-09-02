@@ -10,12 +10,12 @@
 	</div>
 </div>
 
+<!-- Show results -->
 <div ng-if="company.opening">
 	<div class="panel panel-default" ng-repeat="job in company.jobList">
 	  <div class="text-center job"><a href="{{company.careerUrl}}" target='_blank' class="hvr-sink">{{job}}</a></div>
 	</div>
 </div>
-
 
 <div ng-if="!company.opening">
 	<div class="panel panel-default">
@@ -23,10 +23,13 @@
 	</div>
 </div>
 
-<span class="searchButton"><i class="fa fa-search fa-2x"></i></span><input ng-change="company.search()" ng-model="company.searchTerm" ng-keydown="company.deleteTerm($event)" type="text" id="search-box" style="width: 0px; visibility:hidden;"/>
+<!-- Search buton and search box -->
+<search-box-directive obj="company"></search-box-directive>
 
+<!-- Social networks share button -->
 <div id="share"></div>
 
+<!-- Take to top of page button -->
 <a href="#" id="back-to-top" title="Back to top"><i class="fa fa-arrow-up fa-2x"></i></a>
 
 <script>
