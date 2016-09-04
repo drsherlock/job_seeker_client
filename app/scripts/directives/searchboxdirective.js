@@ -2,19 +2,19 @@
 
 /**
  * @ngdoc directive
- * @name jobSeekerApp.directive:searchBox
+ * @name jobSeekerApp.directive:searchBoxDirective
  * @description
- * # searchBox
+ * # searchBoxDirective
  */
 angular.module('jobSeekerApp')
   .directive('searchBoxDirective', function () {
     return {
+      templateUrl: 'templates/searchbox-template.html',
       restrict: 'E',
       scope: { 'obj': "=",
              },
       controller: function () {},
       controllerAs: 'dirCtrl',
-      bindToController: true,
-      templateUrl: 'templates/searchbox-template.html'
+      bindToController: true
     };
   });

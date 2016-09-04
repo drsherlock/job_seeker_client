@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: searchBox', function () {
+describe('Directive: searchBoxDirective', function () {
 
   // load the directive's module
   beforeEach(module('jobSeekerApp'));
@@ -13,8 +13,8 @@ describe('Directive: searchBox', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<search-box></search-box>');
+    element = angular.element('<search-box-directive></search-box-directive>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the searchBox directive');
+    expect(element.text()).toBe('this is the searchBoxDirective directive');
   }));
 });

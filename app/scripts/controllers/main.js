@@ -24,7 +24,7 @@ angular.module('jobSeekerApp')
           }
         });
   		}, function(error) {
-  			console.log("fuck u "+ error);
+  			console.log(error);
   		});
   	jobsService.getJobs(1)
   		.then(function(response){
