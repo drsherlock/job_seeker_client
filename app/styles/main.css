@@ -6,8 +6,8 @@ body {
 }
 
 body {
-	 background-color: #444444;
-	 color: #eeeeee;
+	 background-color: #333333;
+	 color: #35c2c3;
 }
 
 #wrapper {
@@ -32,7 +32,7 @@ body {
 }
 
 .jumbotron {
-	background-color: #337695;
+	background-color: #c33635;
 	border-radius: 0 !important;
 }
 
@@ -41,28 +41,35 @@ body {
 }
 
 .navbar {
-	background-color: #eeeeee;
+	background-color: #35c2c3;
 	border-radius: 0 !important;
+	border: 0px !important;
 }
 
 .nav li a {
-	color: #444444 !important;
+	color: #333333 !important;
 }
 
 .nav li a:hover {
-	color: #337695 !important;
+	color: #c33635 !important;
+}
+
+.navbar-default .navbar-nav > .active > a {
+	background-color: #35c2c3 !important;
+	color: #c33635 !important;
 }
 
 .navbar-brand {
-	color: #337695 !important;
+	color: #c33635 !important;
 }
 
 .panel {
 	border-radius: 0 !important;
+	border: 0px !important;
 }
 
 .panel-body {
-	background-color: #337695;
+	background-color: #c33635;
 }
 
 .flexcontainer {
@@ -88,16 +95,17 @@ body {
 }
 
 .panel-heading {
-	background-color: #eeeeee !important;
+	background-color: #35c2c3 !important;
+	border: 0px !important;
 }
 
 .panel-heading h3 {
 	font-size: 2.5em;
-	background-color: #337695;
-	color: #444444;
-	box-shadow: 10px 10px 10px #444444;
+	background-color: #c33635;
+	color: #333333;
+	box-shadow: 10px 10px 10px #333333;
 	transition: box-shadow 0.5s;
-	border-color: #337695;
+	border-color: #c33635;
 	border-radius: 0 !important;
 }
 
@@ -107,7 +115,7 @@ body {
 
 .top-panel {
 	font-size: 2em;
-	border-color: #337695;
+	border-color: #c33635;
 }
 
 a:link {
@@ -131,8 +139,8 @@ a:hover {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background-color: #eeeeee;
-	color: #337695;
+	background-color: #35c2c3;
+	color: #c33635;
 }
 
 #footer-text {
@@ -149,8 +157,8 @@ a:hover {
 	text-align: center;
 	/*margin-bottom: 30px;*/
 	cursor: pointer;
-	background-color: #337695;
-	color: #444444;
+	background-color: #c33635;
+	color: #333333;
 	width: 25%;
 	font-size: 1.5em;
 	-moz-transition: all .5s ease-in;
@@ -159,26 +167,26 @@ a:hover {
     transition: all .5s ease-in;
 }
 .nextButton:hover {
-	background-color: #eeeeee;
-	color: #337695;
+	background-color: #35c2c3;
+	color: #c33635;
 }
 
 .job {
 	font-size: 2em;
-	background-color: #eeeeee;
-	/*color: #337695;*/
+	background-color: #35c2c3;
+	/*color: #c33635;*/
 	padding-top: 5px;
 	padding-bottom: 15px;
 
 }
 
 .job a {
-	/*color: #337695;*/
-	background-color: #337695;
-	color: #444444;
-	box-shadow: 5px 5px 10px #444444;
+	/*color: #c33635;*/
+	background-color: #c33635;
+	color: #333333;
+	box-shadow: 5px 5px 10px #333333;
 	transition: box-shadow 0.3s;
-	border-color: #337695;
+	border-color: #c33635;
 	border-radius: 0 !important;
 	padding-left: 5px;
 	padding-right: 5px;
@@ -206,7 +214,7 @@ a:hover {
   width: 30px;
   height: 30px;
   text-align: center;
-  color: #337695;
+  color: #c33635;
   cursor: pointer;
   border: 0;
   text-decoration: none;
@@ -218,7 +226,7 @@ a:hover {
 }
 
 #back-to-top:hover {
-    color: #eeeeee;
+    color: #35c2c3;
 }
 
 #back-to-top.show {
@@ -233,7 +241,7 @@ a:hover {
   width: 30px;
   height: 30px;
   text-align: center;
-  color: #eeeeee;
+  color: #35c2c3;
   cursor: pointer;
   border: 0;
 }
@@ -244,15 +252,15 @@ a:hover {
 	right: 25px;
 	height: 30px;
 	z-index: 9999;
-	color: #444444;
+	color: #333333;
 	font-size: 1.5em;
-	background-color: #eeeeee;
+	background-color: #35c2c3;
 	border: 0;
 }
 
 #search-box:focus { 
-	outline-color: #337695;
-    background-color: #eeeeee;
+	outline-color: #c33635;
+    background-color: #35c2c3;
     border: 0;
 }
 
@@ -286,4 +294,12 @@ a:hover {
 .hvr-sink:hover, .hvr-sink:focus, .hvr-sink:active {
   -webkit-transform: translateY(8px);
   transform: translateY(8px);
+}
+
+.contact-btns a .btn {
+	color: #35c2c3;
+}
+
+.contact-btns a .btn:hover {
+	color: #c33635;
 }

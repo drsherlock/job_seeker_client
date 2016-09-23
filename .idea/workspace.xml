@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="461a241e-936e-4c3e-90f3-139715c3a83c" name="Default" comment="" />
+    <list default="true" id="461a241e-936e-4c3e-90f3-139715c3a83c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/jobsall.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/jobsall.js" />
+    </list>
     <ignored path="job_seeker.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,7 +35,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="77" />
-    <option name="y" value="63" />
+    <option name="y" value="64" />
     <option name="width" value="1281" />
     <option name="height" value="704" />
   </component>
@@ -63,6 +65,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -71,9 +74,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job_seeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job_seeker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -96,14 +108,15 @@
       <updated>1471276406736</updated>
       <workItem from="1471276414099" duration="11000" />
       <workItem from="1471634651785" duration="596000" />
+      <workItem from="1473441494137" duration="43000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="607000" />
+    <option name="totallyTimeSpent" value="650000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="77" y="63" width="1281" height="704" extended-state="0" />
+    <frame x="77" y="64" width="1281" height="704" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980484" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
