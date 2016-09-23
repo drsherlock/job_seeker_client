@@ -43,9 +43,4 @@ angular.module('jobSeekerApp')
 				console.log(error);
 			});    
 
-			// Change navbar active class
-			$(".nav a").on("click", function() {
-				$(".nav").find(".active").removeClass("active");
-				$(this).parent().addClass("active");
-			});
 	}]);

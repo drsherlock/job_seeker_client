@@ -6,8 +6,8 @@ body {
 }
 
 body {
-	 background-color: #333333;
-	 color: #35c2c3;
+	 background-color: #35c2c3;
+	 color: #111111;
 }
 
 #wrapper {
@@ -32,7 +32,7 @@ body {
 }
 
 .jumbotron {
-	background-color: #c33635;
+	background-color: rgba(195,54,53,0.8);
 	border-radius: 0 !important;
 }
 
@@ -41,13 +41,13 @@ body {
 }
 
 .navbar {
-	background-color: #35c2c3;
+	background-color: #111111;
 	border-radius: 0 !important;
 	border: 0px !important;
 }
 
 .nav li a {
-	color: #333333 !important;
+	color: #35c2c3 !important;
 }
 
 .nav li a:hover {
@@ -55,7 +55,7 @@ body {
 }
 
 .navbar-default .navbar-nav > .active > a {
-	background-color: #35c2c3 !important;
+	background-color: #111111 !important;
 	color: #c33635 !important;
 }
 
@@ -95,16 +95,16 @@ body {
 }
 
 .panel-heading {
-	background-color: #35c2c3 !important;
+	background-color: #111111 !important;
 	border: 0px !important;
 }
 
 .panel-heading h3 {
 	font-size: 2.5em;
 	background-color: #c33635;
-	color: #333333;
-	box-shadow: 10px 10px 10px #333333;
-	transition: box-shadow 0.5s;
+	color: #35c2c3;
+	/* box-shadow: 10px 10px 10px #35c2c3; */
+	/* transition: box-shadow 0.5s; */
 	border-color: #c33635;
 	border-radius: 0 !important;
 }
@@ -139,7 +139,7 @@ a:hover {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background-color: #35c2c3;
+	background-color: #111111;
 	color: #c33635;
 }
 
@@ -158,7 +158,7 @@ a:hover {
 	/*margin-bottom: 30px;*/
 	cursor: pointer;
 	background-color: #c33635;
-	color: #333333;
+	color: #35c2c3;
 	width: 25%;
 	font-size: 1.5em;
 	-moz-transition: all .5s ease-in;
@@ -167,13 +167,13 @@ a:hover {
     transition: all .5s ease-in;
 }
 .nextButton:hover {
-	background-color: #35c2c3;
+	background-color: #111111;
 	color: #c33635;
 }
 
 .job {
 	font-size: 2em;
-	background-color: #35c2c3;
+	background-color: #111111;
 	/*color: #c33635;*/
 	padding-top: 5px;
 	padding-bottom: 15px;
@@ -183,9 +183,9 @@ a:hover {
 .job a {
 	/*color: #c33635;*/
 	background-color: #c33635;
-	color: #333333;
-	box-shadow: 5px 5px 10px #333333;
-	transition: box-shadow 0.3s;
+	color: #35c2c3;
+	/* box-shadow: 5px 5px 10px #35c2c3;
+	transition: box-shadow 0.3s; */
 	border-color: #c33635;
 	border-radius: 0 !important;
 	padding-left: 5px;
@@ -226,7 +226,7 @@ a:hover {
 }
 
 #back-to-top:hover {
-    color: #35c2c3;
+    color: #111111;
 }
 
 #back-to-top.show {
@@ -241,7 +241,7 @@ a:hover {
   width: 30px;
   height: 30px;
   text-align: center;
-  color: #35c2c3;
+  color: #111111;
   cursor: pointer;
   border: 0;
 }
@@ -252,15 +252,15 @@ a:hover {
 	right: 25px;
 	height: 30px;
 	z-index: 9999;
-	color: #333333;
+	color: #35c2c3;
 	font-size: 1.5em;
-	background-color: #35c2c3;
+	background-color: #111111;
 	border: 0;
 }
 
 #search-box:focus { 
 	outline-color: #c33635;
-    background-color: #35c2c3;
+    background-color: #111111;
     border: 0;
 }
 
@@ -297,7 +297,7 @@ a:hover {
 }
 
 .contact-btns a .btn {
-	color: #35c2c3;
+	color: #111111;
 }
 
 .contact-btns a .btn:hover {
