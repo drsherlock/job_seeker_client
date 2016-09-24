@@ -72,47 +72,6 @@ body {
 	background-color: #c33635;
 }
 
-.flexcontainer {
-   display: -webkit-flex;
-   display: flex;
-   -webkit-align-items: center;
-   align-items: center;
-   -webkit-justify-content: center;
-   justify-content: center;
-   -webkit-flex-direction: row;
-   flex-direction: row;
-   -webkit-flex-wrap: wrap;
-   flex-wrap: wrap;
-   -webkit-flex-flow: row wrap;
-   flex-flow: row wrap;
-   -webkit-align-content: flex-end;
-   align-content: flex-end;
-}
-
-.panel-body div {
-	width: 50%;
-	font-size: 1.5em;
-}
-
-.panel-heading {
-	background-color: #111111 !important;
-	border: 0px !important;
-}
-
-.panel-heading h3 {
-	font-size: 2.5em;
-	background-color: #c33635;
-	color: #35c2c3;
-	/* box-shadow: 10px 10px 10px #35c2c3;
-	transition: box-shadow 0.5s; */
-	border-color: #c33635;
-	border-radius: 0 !important;
-}
-
-.panel-heading h3:hover {
-	box-shadow: none;
-}
-
 .top-panel {
 	font-size: 2em;
 	border-color: #c33635;
@@ -135,15 +94,23 @@ a:hover {
 }
 */
 
-.row-high {
-	min-height: 140px !important;
+.jobs-row {
+	min-height: 100px !important;
 }
 
-.col-high {
-	min-height: 120px !important;
+.jobs-col {
+	min-height: 80px !important;
 }
 
-.companies, .jobs {
+.companies-row {
+	min-height: 130px !important;
+}
+
+.companies-col {
+	min-height: 110px !important;
+}
+
+.companies-col, .jobs-col, .company-col {
 	background-color: #c33635;
 	border: 1px solid #111111;
 	display: -webkit-flex;
@@ -155,8 +122,11 @@ a:hover {
 }
 
 .text-center a h4 {
-	font-size: 1.75em;
-	color: #111111 !important;
+	font-size: 2em;
+}
+
+.text-center div {
+	font-size: 1.2em;
 }
 
 .footer {
@@ -197,7 +167,6 @@ a:hover {
 
 .job {
 	font-size: 2em;
-	background-color: #111111;
 	/*color: #c33635;*/
 	padding-top: 5px;
 	padding-bottom: 15px;
@@ -222,11 +191,11 @@ a:hover {
 
 #contact-me {
 	margin-top: 50px;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 .btn span {
-	font-size: 2em;
+	font-size: 1.5em;
 	margin-left: 5px;
 }
 
@@ -304,20 +273,21 @@ a:hover {
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
+  -webkit-transition-property: transform, color;
+  transition-property: transform, color;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
+  color: #111111;
 }
 .hvr-sink:hover, .hvr-sink:focus, .hvr-sink:active {
   -webkit-transform: translateY(8px);
   transform: translateY(8px);
+  color: #35c2c3;
 }
 
 .contact-btns a .btn {

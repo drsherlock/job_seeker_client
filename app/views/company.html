@@ -1,11 +1,11 @@
 
-<div class="panel panel-default">
-	<div class="panel-heading text-center">
+<div class="company-col">
+	<div class="text-center">
     <a href="{{company.companyUrl}}" target='_blank' class="hvr-sink">
-      <h3 class="well">{{company.companyName}}</h3>
+      <h4>{{company.companyName}}</h4>
     </a>
   </div>
-	<div class="panel-body text-center flexcontainer">
+	<div class="text-center">
 		<div>Location: {{company.location}}</div>
 		<div>Founded In: {{company.foundedYear}}</div>
 		<div ng-if="company.opening">Opening: Yes</div>
@@ -15,18 +15,19 @@
 </div>
 
 <!-- Show results -->
-<div ng-if="company.opening">
-	<div class="panel panel-default" ng-repeat="job in company.jobList">
-	  <div class="text-center job">
-      <a href="{{company.careerUrl}}" target='_blank' class="hvr-sink">{{job}}</a>
+<div ng-switch on="company.numberOpenings">
+    <div ng-switch-when="0">
+        <div>
+          <div class="text-center job">No current openings!</div>
+        </div>
     </div>
-	</div>
-</div>
-
-<div ng-if="!company.opening">
-	<div class="panel panel-default">
-	  <div class="text-center job">No current openings!</div>
-	</div>
+    <div ng-switch-default>
+      <div ng-repeat="job in company.jobList">
+        <div class="text-center job">
+          <a href="{{company.careerUrl}}" target='_blank' class="hvr-sink">{{job}}</a>
+        </div>
+      </div>
+    </div>
 </div>
 
 <!-- Search buton and search box -->
@@ -65,7 +66,7 @@
       showLabel: false,
     	showCount: false,
     	shareIn: "popup",
-    	text: "Check out these awesome openings!",
+    	text: "Check out these awesome job openings!",
       shares: ["email", "twitter", "facebook", "googleplus", "linkedin", "whatsapp"]
     });
 </script>

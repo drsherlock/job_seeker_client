@@ -4,15 +4,15 @@
 </div>
 
 <!-- Show results -->
-<div class="row row-high" ng-repeat="job in jobs.jobsList track by $index" ng-if="$index%3==0">
-  <div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 jobs col-high" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-if="jobs.jobsList[i] != null"> 
+<div class="jobs-row" ng-repeat="job in jobs.jobsList">
+  <div class="jobs-col"> 
     <div class="text-center">
-      <a href="{{jobs.jobsList[i].career_url}}" target='_blank' class="hvr-sink"> 
-        <h4>{{jobs.jobsList[i].job_name}}</h4> 
+      <a href="{{job.career_url}}" target='_blank' class="hvr-sink"> 
+        <h4>{{job.job_name}}</h4> 
       </a> 
     </div>
     <div class="text-center"> 
-      <div>Company: {{jobs.jobsList[i].company_name}}</div>
+      <div>Company: {{job.company_name}}</div>
     </div>
   </div>  
 </div>
