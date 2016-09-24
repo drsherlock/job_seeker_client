@@ -103,8 +103,8 @@ body {
 	font-size: 2.5em;
 	background-color: #c33635;
 	color: #35c2c3;
-	/* box-shadow: 10px 10px 10px #35c2c3; */
-	/* transition: box-shadow 0.5s; */
+	/* box-shadow: 10px 10px 10px #35c2c3;
+	transition: box-shadow 0.5s; */
 	border-color: #c33635;
 	border-radius: 0 !important;
 }
@@ -134,6 +134,30 @@ a:hover {
     text-decoration: none;
 }
 */
+
+.row-high {
+	min-height: 140px !important;
+}
+
+.col-high {
+	min-height: 120px !important;
+}
+
+.companies, .jobs {
+	background-color: #c33635;
+	border: 1px solid #111111;
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+	flex-direction: column;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.text-center a h4 {
+	font-size: 1.75em;
+	color: #111111 !important;
+}
 
 .footer {
 	position: absolute;

@@ -94,7 +94,7 @@ angular.module('jobSeekerApp')
     // Function to hide and show next button
     function checkCount() {
       console.log(count);
-      $(".nextButton").toggle(count > 10);
-      count = count - 10;
+      $(".nextButton").toggle(count > 12);
+      count = count - 12;
     }
   }]);

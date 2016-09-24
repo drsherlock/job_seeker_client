@@ -1,21 +1,21 @@
 
 <div class="panel panel-default top-panel text-center bungee-font">
-  <div class="panel-body">Companies</div>
+	<div class="panel-body">Companies</div>
 </div>
 
 <!-- Show results -->
-<div class="panel panel-default companies" ng-repeat="company in companies.companiesList">
-	<div class="panel-heading text-center">
-    <a ng-href="/companies/{{company.id}}" class="hvr-sink">
-      <h3 class="well">{{company.company_name}}</h3>
-    </a>
-  </div>
-	<div class="panel-body text-center flexcontainer">
-		<div>Location: {{company.location}}</div>
-		<div>Founded In: {{company.founded_year}}</div>
-		<div ng-if="company.opening">Opening: Yes</div>
-		<div ng-if="!company.opening">Opening: No</div>
-		<div>Number Of Openings: {{company.no_openings}}</div>
+<div class="row row-high" ng-repeat="company in companies.companiesList track by $index" ng-if="$index%3==0">
+	<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 companies col-high" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-if="companies.companiesList[i] != null">
+		<div class="text-center">
+			<a ng-href="/companies/{{companies.companiesList[i].id}}" class="hvr-sink">
+				<h4>{{companies.companiesList[i].company_name}}</h4>
+			</a>
+		</div>
+		<div class="text-center">
+			<div>Location: {{companies.companiesList[i].location}}</div>
+			<div>Founded In: {{companies.companiesList[i].founded_year}}</div>
+			<div>Number Of Openings: {{companies.companiesList[i].no_openings}}</div>
+		</div>
 	</div>
 </div>
 
@@ -29,25 +29,25 @@
 <div ng-click="companies.getNext()" class="nextButton">See More</div>
 
 <script type="text/javascript">	
-  	if ($('#back-to-top').length) {
-      	var scrollTrigger = 100, // px
-        backToTop = function () {
-            var scrollTop = $(window).scrollTop();
-            if (scrollTop > scrollTrigger) {
-                $('#back-to-top').addClass('show');
-            } else {
-                $('#back-to-top').removeClass('show');
-            }
-        };
-      	backToTop();
-      	$(window).on('scroll', function () {
-          	backToTop();
-      	});
-      	$('#back-to-top').on('click', function (e) {
-          	e.preventDefault();
-          	$('html,body').animate({
-              	scrollTop: 0
-          	}, 1000);
-      	});
-  	}
+		if ($('#back-to-top').length) {
+				var scrollTrigger = 100, // px
+				backToTop = function () {
+						var scrollTop = $(window).scrollTop();
+						if (scrollTop > scrollTrigger) {
+								$('#back-to-top').addClass('show');
+						} else {
+								$('#back-to-top').removeClass('show');
+						}
+				};
+				backToTop();
+				$(window).on('scroll', function () {
+						backToTop();
+				});
+				$('#back-to-top').on('click', function (e) {
+						e.preventDefault();
+						$('html,body').animate({
+								scrollTop: 0
+						}, 1000);
+				});
+		}
 </script>
